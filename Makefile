@@ -7,12 +7,12 @@ DATA_ARCHIVE = icudt52l.zip
 # Source from: http://apps.icu-project.org/datacustom/
 # Select Miscellaneous Data: rfc3491.spp rfc3920node.spp rfc3920res.spp
 
-OSX_SDK_VERSION = 10.9
-OSX_MIN_VERSION = 10.9
+OSX_SDK_VERSION = 10.12
+OSX_MIN_VERSION = 10.12
 OSX_ARCH = MacOSX-x86_64
 OSX_TARGET = $(patsubst %,build/%/XMPPStringPrep.a,$(OSX_ARCH))
-IOS_SDK_VERSION = 7.0
-IOS_MIN_VERSION = 7.0
+IOS_SDK_VERSION = 10.1
+IOS_MIN_VERSION = 8.0
 IOS_ARCH = iPhoneSimulator-i386 iPhoneSimulator-x86_64 iPhoneOS-armv7 iPhoneOS-armv7s iPhoneOS-arm64
 IOS_TARGET = $(patsubst %,build/%/XMPPStringPrep.a,$(IOS_ARCH))
 ALL_TARGET = XMPPStringPrep-osx.a XMPPStringPrep-ios.a
