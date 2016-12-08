@@ -50,8 +50,8 @@ build/iPhoneSimulator-%: SDK = $(BASEDIR)/SDKs/iPhoneSimulator$(IOS_SDK_VERSION)
 build/iPhoneSimulator-%: ICU_FLAGS = $(BASE_ICU_FLAGS) --with-cross-build=$(PWD)/$(CROSS_TARGET_DIR)/build
 build/iPhoneOS-%: SDK = $(BASEDIR)/SDKs/iPhoneOS$(IOS_SDK_VERSION).sdk
 build/iPhoneOS-%: ICU_FLAGS = $(BASE_ICU_FLAGS) --host=arm-apple-darwin --with-cross-build=$(PWD)/$(CROSS_TARGET_DIR)/build
-build/iPhone%: CFLAGS = -miphoneos-version-min=$(IOS_MIN_VERSION) -arch $(ARCH) -isysroot $(SDK) $(BASE_CFLAGS)
-build/iPhone%: CXXFLAGS = -miphoneos-version-min=$(IOS_MIN_VERSION) -arch $(ARCH) -isysroot $(SDK) $(BASE_CXXFLAGS)
+build/iPhone%: CFLAGS = -fembed-bitcode -miphoneos-version-min=$(IOS_MIN_VERSION) -arch $(ARCH) -isysroot $(SDK) $(BASE_CFLAGS)
+build/iPhone%: CXXFLAGS = -fembed-bitcode -miphoneos-version-min=$(IOS_MIN_VERSION) -arch $(ARCH) -isysroot $(SDK) $(BASE_CXXFLAGS)
 build/iPhone%: LDFLAGS = -miphoneos-version-min=$(IOS_MIN_VERSION) -arch $(ARCH) -isysroot $(SDK) $(BASE_LDFLAGS)
 
 build/%/icu/libicuxmppframework.a: $(SRC_ARCHIVE) $(DATA_ARCHIVE)
